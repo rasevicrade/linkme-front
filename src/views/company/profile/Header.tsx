@@ -48,7 +48,7 @@ export default function Header() {
 				<Paper elevation={3} className={classes.companyInfo}>
 					<Grid container>
 						<Grid item xs={12}>
-							<Typography variant="subtitle2">
+							<Typography variant="h5">
 								Microsoft Corp.
 							</Typography>
 							<Typography color="textSecondary" variant="body2">

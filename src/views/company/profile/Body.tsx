@@ -12,17 +12,13 @@ import {
 } from '@material-ui/core';
 import { css } from '@emotion/core';
 import Typography from '@material-ui/core/Typography';
+import JobCard from '../../job/JobCard';
 
 const useStyles = makeStyles((theme: Theme) => ({
-	root: {
-		height: '100vh',
-		backgroundColor: theme.palette.secondary.main
-	},
 	header: {
-		backgroundColor: theme.palette.primary.main
-	},
-	body: {
-		backgroundColor: theme.palette.secondary.main
+		backgroundColor: theme.palette.primary.main,
+		color: '#fff',
+		fontWeight: 'bold'
 	}
 }));
 
@@ -31,16 +27,56 @@ export default function Body() {
 	const theme = useTheme();
 
 	return (
-		<Card className={classes.root}>
-			<CardHeader
-				className={classes.header}
-				title={
-					<Typography variant="h5" component="h5">
-						Test
-					</Typography>
-				}
-			/>
-			<CardContent className={classes.body}>wd</CardContent>
-		</Card>
+		<Grid container spacing={1}>
+			<Grid item xs={12}>
+				<Card>
+					<CardHeader
+						className={classes.header}
+						title={
+							<Typography variant="h5">Most wanted</Typography>
+						}
+					/>
+					<CardContent>
+						<Grid container spacing={2}>
+							<Grid item xs={6}>
+								<JobCard />
+							</Grid>
+							<Grid item xs={6}>
+								<JobCard />
+							</Grid>
+						</Grid>
+					</CardContent>
+				</Card>
+			</Grid>
+			<Grid item xs={12}>
+				<Card>
+					<CardHeader
+						className={classes.header}
+						title={
+							<Typography variant="h5">Engineering</Typography>
+						}
+					/>
+					<CardContent>
+						<Grid container spacing={2}>
+							<Grid item xs={6}>
+								<JobCard />
+							</Grid>
+							<Grid item xs={6}>
+								<JobCard />
+							</Grid>
+							<Grid item xs={6}>
+								<JobCard />
+							</Grid>
+							<Grid item xs={6}>
+								<JobCard />
+							</Grid>
+							<Grid item xs={6}>
+								<JobCard />
+							</Grid>
+						</Grid>
+					</CardContent>
+				</Card>
+			</Grid>
+		</Grid>
 	);
 }
